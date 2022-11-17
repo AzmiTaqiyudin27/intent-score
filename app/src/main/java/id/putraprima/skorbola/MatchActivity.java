@@ -25,7 +25,12 @@ public class MatchActivity extends AppCompatActivity {
     private ImageView homeLogo;
     private ImageView awayLogo;
     private Button addHome;
+    private Button addHome2;
+    private Button addHome3;
     private Button addAway;
+    private Button addAway2;
+    private Button addAway3;
+    private Button resetResult;
     private Button cekResult;
 
     @Override
@@ -39,7 +44,12 @@ public class MatchActivity extends AppCompatActivity {
         homeLogo = findViewById(R.id.home_logo);
         awayLogo = findViewById(R.id.away_logo);
         addHome = findViewById(R.id.btn_add_home);
+        addHome2 = findViewById(R.id.btn_add_home2);
+        addHome3 = findViewById(R.id.btn_add_home3);
         addAway = findViewById(R.id.btn_add_away);
+        addAway2 = findViewById(R.id.btn_add_away2);
+        addAway3 = findViewById(R.id.btn_add_away3);
+        resetResult =  findViewById(R.id.btn_resetresult);
         cekResult = findViewById(R.id.btn_result);
 
         homescore = 0;
@@ -62,6 +72,20 @@ public class MatchActivity extends AppCompatActivity {
                 scoreHome.setText(String.valueOf(homescore));
             }
         });
+        addHome2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                homescore += 2;
+                scoreHome.setText(String.valueOf(homescore));
+            }
+        });
+        addHome3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                homescore += 3;
+                scoreHome.setText(String.valueOf(homescore));
+            }
+        });
 
         addAway.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,7 +94,31 @@ public class MatchActivity extends AppCompatActivity {
                 scoreAway.setText(String.valueOf(awayscore));
             }
         });
+        addAway2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                awayscore += 2;
+                scoreAway.setText(String.valueOf(awayscore));
+            }
+        });
+        addAway3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                awayscore += 3;
+                scoreAway.setText(String.valueOf(awayscore));
+            }
+        });
+        resetResult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                homescore =0 ;
+                scoreHome.setText(String.valueOf(homescore));
 
+                awayscore = 0;
+                scoreAway.setText(String.valueOf(awayscore));
+
+            }
+        });
         cekResult.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
